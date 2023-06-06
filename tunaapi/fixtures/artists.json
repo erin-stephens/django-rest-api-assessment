@@ -1,0 +1,11 @@
+[
+  {
+      "model":"tunaapi.artist",
+      "pk": 1,
+      "fields": {
+          "name": "Joe Josef",
+          "age": "34",
+          "bio": "I like to play the bongos"
+    }
+  }
+]

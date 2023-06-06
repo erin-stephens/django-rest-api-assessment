@@ -1,0 +1,12 @@
+[
+  {
+      "model":"tunaapi.song",
+      "pk": 1,
+      "fields": {
+          "title": "Love Song",
+          "artist": 1,
+          "album": "Self Titled",
+          "length": 13
+    }
+  }
+]

@@ -23,7 +23,7 @@ class ArtistView(ViewSet):
       
     def create(self, request):
       
-        artist = Artist.object.create(
+        artist = Artist.objects.create(
             name=request.data["name"],
             age=request.data["age"],
             bio=request.data["bio"],

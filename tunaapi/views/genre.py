@@ -48,4 +48,5 @@ class GenreView(ViewSet):
 class GenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genre
-        fields = ('id', 'description')
+        fields = ('id', 'description', 'songs')
+        depth = 1

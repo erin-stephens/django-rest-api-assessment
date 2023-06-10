@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from tunaapi.models import Song, Artist
+from tunaapi.models import Song, Artist, SongGenre
 
 class SongView(ViewSet):
   
@@ -53,7 +53,15 @@ class SongView(ViewSet):
         song.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+class SongGenreSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = SongGenre
+        fields = ('genre', )
+        depth = 1
+
 class SongSerializer(serializers.ModelSerializer):
+    genres = SongGenreSerializer(many=True, read_only=True)
     class Meta:
         model = Song
-        fields = ('id', 'title', 'artist', 'album', 'length')
+        fields = ('id', 'title', 'artist', 'album', 'length', 'genres')
+        depth = 1
